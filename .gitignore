@@ -1,0 +1,17 @@
+
+__pycache__/
+*.py[cod]
+.venv/
+.env
+logs/
+out/
+screenshots/
+playwright-report/
+test-results/
+trace.zip
+*.trace
+cookies/
+storage_state.json
+.DS_Store
+.vscode/
+.idea/

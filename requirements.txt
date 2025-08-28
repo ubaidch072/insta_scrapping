@@ -1,0 +1,10 @@
+playwright
+beautifulsoup4
+lxml
+httpx
+pydantic
+tenacity
+loguru
+python-dotenv
+fastapi
+uvicorn[standard]
