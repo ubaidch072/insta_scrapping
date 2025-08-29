@@ -15,3 +15,5 @@ storage_state.json
 .DS_Store
 .vscode/
 .idea/
+
+*.bak
