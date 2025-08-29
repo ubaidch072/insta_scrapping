@@ -1,26 +1,39 @@
-# Base image with Playwright + browsers preinstalled
-FROM mcr.microsoft.com/playwright/python:v1.47.0-jammy
+# VCS
+.git
+.gitignore
+.gitattributes
 
-# Workdir inside the container
-WORKDIR /app
+# Python bytecode & build
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.dist-info/
+build/
+dist/
 
-# Helpful Python envs
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1
+# Virtual envs & IDE
+.venv/
+.env
+.vscode/
+.idea/
 
-# Install Python deps first (better layer caching)
-COPY requirements.txt /app/requirements.txt
-RUN pip install --upgrade pip && pip install -r requirements.txt
+# App artifacts / reports
+logs/
+out/
+screenshots/
+playwright-report/
+test-results/
+trace.zip
+*.trace
+htmlcov/
+.tox/
 
-# Copy project files
-COPY . /app
+# Local data & secrets
+cookies/
+storage_state.json
 
-# Normalize Windows CRLF to LF for the start script and make it executable
-RUN sed -i 's/\r$//' /app/start.sh && chmod +x /app/start.sh
-
-# (Optional) default port for local runs; Render injects $PORT automatically
-ENV PORT=10000
-
-# Start the service (start.sh copies storage_state.json from Secret Files and launches uvicorn)
-CMD ["/app/start.sh"]
+# OS cruft
+.DS_Store
+Thumbs.db
