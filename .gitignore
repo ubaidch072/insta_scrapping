@@ -19,3 +19,5 @@ storage_state.json
 *.bak
 
 *.bak
+*.bak
+__pycache__/
