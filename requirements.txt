@@ -1,4 +1,4 @@
-playwright
+playwright==1.55.0
 beautifulsoup4
 lxml
 httpx
