@@ -1,39 +1,15 @@
-# VCS
+# Git / IDE / caches
 .git
-.gitignore
-.gitattributes
-
-# Python bytecode & build
+.vscode
 __pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.egg-info/
-*.dist-info/
-build/
-dist/
+*.pyc
 
-# Virtual envs & IDE
+# Local env & heavy stuff
 .venv/
 .env
-.vscode/
-.idea/
+debug.png
+*.log
 
-# App artifacts / reports
-logs/
-out/
-screenshots/
-playwright-report/
-test-results/
-trace.zip
-*.trace
-htmlcov/
-.tox/
-
-# Local data & secrets
-cookies/
-storage_state.json
-
-# OS cruft
+# OS junk
 .DS_Store
 Thumbs.db

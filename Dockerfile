@@ -1,20 +1,27 @@
-# Match Playwright Python package & browser binaries
+# Playwright + Python base (Chromium ready)
 FROM mcr.microsoft.com/playwright/python:v1.55.0-jammy
+
+# Saaf logs
+ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
+# Playwright browser path
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+# Default port (Render $PORT de deta hai)
+ENV PORT=10000 UVICORN_WORKERS=1
 
 WORKDIR /app
 
-# Copy deps and install
+# Python deps
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Install Playwright browsers (Chromium) and OS deps into the image
+# Chromium + deps
 RUN playwright install --with-deps chromium
 
-# Copy project files
+# App code
 COPY . .
 
-# Environment: Render exposes a PORT, default to 10000
-ENV PORT=10000
+# Start script permissions
+RUN chmod +x /app/start.sh
 
-# Start FastAPI via Uvicorn
-CMD ["uvicorn", "app.webapi:app", "--host", "0.0.0.0", "--port", "10000"]
+EXPOSE 10000
+CMD ["/app/start.sh"]
