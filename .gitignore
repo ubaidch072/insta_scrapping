@@ -1,25 +1,18 @@
+Add-Content -Path .gitignore -Value @'
 # Python
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-*.coverage
-.pytest_cache/
 
-# Env & secrets
-.env
-.env.*
-storage_state.json
-
-# Virtual envs
+# Virtualenv
 .venv/
 env/
-venv/
 
-# Editor/OS junk
-.vscode/
-.idea/
-.DS_Store
-
-# Playwright/Cache
+# Playwright cache
 playwright/.cache/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+'@
