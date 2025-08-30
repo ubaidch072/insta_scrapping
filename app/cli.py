@@ -1,5 +1,5 @@
 # app/cli.py
-<<<<<<< HEAD
+
 from typing import Optional, Dict, Any
 from .browser import open_browser
 
@@ -27,7 +27,7 @@ async def run(query: Optional[str], username: Optional[str], headless: bool = Tr
         await ctx.close()
         await browser.close()
         await pw.stop()
-=======
+
 # ------------------------------------------------------------
 # Scraper entrypoint used by webapi.py
 # - Loads cookies from storage_state.json if present
@@ -269,4 +269,4 @@ async def run(
         return {"ok": False, "error": f"timeout: {e}", "username": username, "profile_url": url}
     except Exception as e:
         return {"ok": False, "error": str(e) or e.__class__.__name__, "username": username, "profile_url": url}
->>>>>>> 88fc53e (Update: fixed Selector loop + added View Recent Posts, Exit button, Render deploy files)
+
