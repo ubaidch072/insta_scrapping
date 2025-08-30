@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-﻿from fastapi import FastAPI
+﻿<<<<<<< HEAD
+ï»¿from fastapi import FastAPI
 from fastapi.responses import JSONResponse, PlainTextResponse, HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from .cli import run
@@ -175,7 +175,7 @@ let last=null;
 function setStatus(t){ statusEl.textContent=t; }
 f.addEventListener('submit', async (e)=>{
   e.preventDefault();
-  setStatus('Scraping…'); out.textContent='Loading…'; btnJ.disabled=true; btnT.disabled=true;
+  setStatus('Scrapingâ€¦'); out.textContent='Loadingâ€¦'; btnJ.disabled=true; btnT.disabled=true;
   try{
     const res = await fetch('/profile?username=' + encodeURIComponent(u.value));
     const data = await res.json(); last = data;
@@ -276,7 +276,7 @@ btnT.addEventListener('click', ()=>{
           }
 
           card.innerHTML = `
-            <a href="${p.url}" target="_blank" style="text-decoration:none;color:#ffb86b">Open post ↗</a>
+            <a href="${p.url}" target="_blank" style="text-decoration:none;color:#ffb86b">Open post â†—</a>
             <div style="margin:6px 0">${mediaHtml}</div>
             <div style="font-size:13px;color:#cbb9a8">${date}</div>
             <div style="margin-top:6px">${cap || '<span style="color:#cbb9a8">No caption</span>'}</div>
@@ -293,8 +293,8 @@ btnT.addEventListener('click', ()=>{
     // Scrape
     f.addEventListener('submit', async (e)=>{
       e.preventDefault();
-      setStatus('Scraping…');
-      out.textContent='Loading…';
+      setStatus('Scrapingâ€¦');
+      out.textContent='Loadingâ€¦';
       btnJ.disabled=true; btnT.disabled=true; btnV.disabled=true;
       gallery.style.display='none';
       try{
@@ -307,7 +307,7 @@ btnT.addEventListener('click', ()=>{
         if (data.ok){
           // Enable downloads
           btnJ.disabled=false; btnT.disabled=false;
-          // Always enable "View Recent Posts" — gallery will show message if empty
+          // Always enable "View Recent Posts" â€” gallery will show message if empty
           btnV.disabled = false;
           // Optional: auto open gallery if posts found
           if (data.posts_data && data.posts_data.length) { renderGallery(data); }
@@ -355,7 +355,7 @@ btnT.addEventListener('click', ()=>{
       try{
         await fetch('/__shutdown', {method:'POST'});
       }catch(e){}
-      setStatus('Shutting down…');
+      setStatus('Shutting downâ€¦');
       setTimeout(()=>{ window.close(); }, 400);
     });
 
@@ -401,7 +401,7 @@ async def profile(username: str, query: str | None = None):
                 "ok": True,
                 "username": username,
                 "name": "Demo User",
-                "bio": "Mock mode ✅",
+                "bio": "Mock mode âœ…",
                 "external_url": "https://example.com",
                 "followers": 12345,
                 "following": 67,
@@ -431,7 +431,7 @@ async def profile_txt(username: str):
         lines = [
             "Name: Demo User",
             f"Username: @{username}",
-            "Bio: Mock mode ✅",
+            "Bio: Mock mode âœ…",
             "Followers: 12,345",
             "Following: 67",
             "Posts: 3",

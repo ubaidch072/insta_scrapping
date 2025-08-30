@@ -1,4 +1,4 @@
-from playwright.sync_api import sync_playwright
+﻿from playwright.sync_api import sync_playwright
 STATE = "storage_state.json"
 def main():
     print("[login] starting playwright...")

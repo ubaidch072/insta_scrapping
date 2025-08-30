@@ -1,4 +1,4 @@
-# app/scrape.py
+﻿# app/scrape.py
 from __future__ import annotations
 
 import json
@@ -115,7 +115,7 @@ def scrape_profile_basics(html: str, url: str) -> Dict[str, Any]:
         out.update({k: v for k, v in meta.items() if v})
 
     # Meta tags fallbacks
-    # <meta property="og:title" content="Full Name (@username) • Instagram photos and videos">
+    # <meta property="og:title" content="Full Name (@username) â€¢ Instagram photos and videos">
     with suppress(Exception):
         og_title = soup.select_one('meta[property="og:title"]')
         if og_title and og_title.get("content"):

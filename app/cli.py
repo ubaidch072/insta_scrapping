@@ -1,4 +1,4 @@
-# app/cli.py
+﻿# app/cli.py
 
 from typing import Optional, Dict, Any
 from .browser import open_browser
@@ -87,13 +87,13 @@ async def _extract_post(ctx, url: str) -> Dict[str, Any]:
         # Caption: try the quoted text in the og:description, else take leading piece
         caption = None
         if og_desc:
-            m = re.search(r"“(.+?)”", og_desc)  # smart quotes variant
+            m = re.search(r"â€œ(.+?)â€", og_desc)  # smart quotes variant
             if not m:
                 m = re.search(r'"(.+?)"', og_desc)  # straight quotes
             if m:
                 caption = m.group(1).strip()
             else:
-                caption = og_desc.split("•")[0].strip()
+                caption = og_desc.split("â€¢")[0].strip()
 
         try:
             posted_at = await page.locator("time").get_attribute("datetime")
@@ -175,7 +175,7 @@ async def run(
 
             if og_title:
                 try:
-                    name = og_title.split("•")[0].strip()
+                    name = og_title.split("â€¢")[0].strip()
                 except Exception:
                     pass
 

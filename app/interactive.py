@@ -1,4 +1,4 @@
-# app/interactive.py
+﻿# app/interactive.py
 import re, time, json, datetime
 from pathlib import Path
 import argparse
@@ -120,9 +120,9 @@ def main():
 
         print(
             "\n=== Interactive Mode ===\n"
-            "• IG window open hai. Search bar se koi bhi PUBLIC profile open karo.\n"
-            "• Jaise hi profile load hogi, yeh tool details + last posts ki screenshots save kar dega.\n"
-            "• Phir next profile open karo—yeh loop chalta rahega. (CTRL+C to exit)\n"
+            "â€¢ IG window open hai. Search bar se koi bhi PUBLIC profile open karo.\n"
+            "â€¢ Jaise hi profile load hogi, yeh tool details + last posts ki screenshots save kar dega.\n"
+            "â€¢ Phir next profile open karoâ€”yeh loop chalta rahega. (CTRL+C to exit)\n"
         )
 
         last = None
@@ -160,7 +160,7 @@ def main():
                 (base.with_suffix(".json")).write_text(json.dumps(prof, ensure_ascii=False, indent=2), encoding="utf-8")
 
             print(f"[interactive] Saved to: {out_dir}  (profile: {user})")
-            print("[interactive] Open next profile in the IG window…")
+            print("[interactive] Open next profile in the IG windowâ€¦")
             last = user
 
     except KeyboardInterrupt:
