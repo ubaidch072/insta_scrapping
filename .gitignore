@@ -1,23 +1,25 @@
-
+# Python
 __pycache__/
-*.py[cod]
-.venv/
+*.pyc
+*.pyo
+*.pyd
+*.coverage
+.pytest_cache/
+
+# Env & secrets
 .env
-logs/
-out/
-screenshots/
-playwright-report/
-test-results/
-trace.zip
-*.trace
-cookies/
+.env.*
 storage_state.json
-.DS_Store
+
+# Virtual envs
+.venv/
+env/
+venv/
+
+# Editor/OS junk
 .vscode/
 .idea/
+.DS_Store
 
-*.bak
-
-*.bak
-*.bak
-__pycache__/
+# Playwright/Cache
+playwright/.cache/
