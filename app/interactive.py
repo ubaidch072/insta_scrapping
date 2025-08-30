@@ -1,4 +1,4 @@
-﻿# app/interactive.py
+# app/interactive.py
 import re, time, json, datetime
 from pathlib import Path
 import argparse

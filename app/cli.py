@@ -1,4 +1,4 @@
-﻿# app/cli.py
+# app/cli.py
 
 from typing import Optional, Dict, Any
 from .browser import open_browser
